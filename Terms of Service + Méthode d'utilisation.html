@@ -131,6 +131,27 @@
             margin-right: 10px;
         }
         
+        .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .review-table th, .review-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .review-table th {
+            background: #2E7D32;
+            color: white;
+        }
+        
+        .review-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
         .footer {
             background: #f8f9fa;
             padding: 20px 30px;
@@ -167,6 +188,10 @@
             }
             .section h2 {
                 font-size: 18px;
+            }
+            .review-table th, .review-table td {
+                padding: 6px;
+                font-size: 12px;
             }
         }
         
@@ -220,6 +245,16 @@
             display: block;
             margin-bottom: 5px;
         }
+        
+        .badge {
+            display: inline-block;
+            background: #2E7D32;
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+        }
     </style>
 </head>
 <body>
@@ -227,7 +262,7 @@
         <div class="header">
             <h1>📜 Conditions d'utilisation</h1>
             <p>MotMemo - Votre assistant pour apprendre le français</p>
-            <p style="font-size: 12px; margin-top: 8px;">🇲🇦 Maroc</p>
+            <p style="font-size: 12px; margin-top: 8px;">🇲🇦 Maroc | 🔄 Version 2.0</p>
         </div>
         
         <div class="language-switch">
@@ -244,6 +279,7 @@
                     <p><strong>🏢 Éditeur :</strong> MotMemo Team</p>
                     <p><strong>📍 Pays :</strong> Maroc</p>
                     <p><strong>📱 Fonctionnement :</strong> Hors ligne (offline)</p>
+                    <p><strong>🔄 Algorithme :</strong> Répétition espacée personnalisée (SM-2 modifié)</p>
                 </div>
                 
                 <div class="info-grid">
@@ -257,7 +293,11 @@
                     </div>
                     <div class="info-item">
                         <strong>🔄 Répétition espacée</strong>
-                        SM-2 pour mémorisation optimale
+                        14 intervalles de révision
+                    </div>
+                    <div class="info-item">
+                        <strong>📊 9 300+ Mots</strong>
+                        Vocabulaire complet
                     </div>
                 </div>
                 
@@ -280,6 +320,7 @@
                             <li>Des exemples d'utilisation avec traduction</li>
                             <li>Les synonymes et antonymes</li>
                             <li>La prononciation audio (bouton 🔊)</li>
+                            <li>Le niveau du mot (A1, A2, B1, B2, C1, C2)</li>
                         </ul>
                     </div>
                     
@@ -289,16 +330,8 @@
                     </div>
                     
                     <div class="step-card">
-                        <p><span class="step-number">4</span> <strong>Révisez régulièrement</strong></p>
-                        <p>Cliquez sur le bouton <strong>"Réviser"</strong> pour voir les mots qui ont besoin d'être révisés selon l'algorithme de répétition espacée (SM-2) :</p>
-                        <ul>
-                            <li>1ère révision : après 1 jour</li>
-                            <li>2ème révision : après 3 jours</li>
-                            <li>3ème révision : après 7 jours</li>
-                            <li>4ème révision : après 14 jours</li>
-                            <li>5ème révision : après 30 jours</li>
-                            <li>6ème révision : après 60 jours</li>
-                        </ul>
+                        <p><span class="step-number">4</span> <strong>Révisez selon l'algorithme SM-2 personnalisé</strong></p>
+                        <p>Cliquez sur le bouton <strong>"Réviser"</strong> pour voir les mots qui ont besoin d'être révisés. Notre algorithme de répétition espacée intelligent détermine le moment optimal pour chaque révision.</p>
                     </div>
                     
                     <div class="step-card">
@@ -319,6 +352,48 @@
                     <div class="step-card">
                         <p><span class="step-number">7</span> <strong>Recevez des notifications</strong></p>
                         <p>Activez les notifications pour recevoir des rappels quotidiens pour réviser vos mots. Cela vous aidera à maintenir une routine d'apprentissage régulière.</p>
+                    </div>
+                </div>
+                
+                <!-- ==================== ALGORITHME DE RÉVISION ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> Algorithme de répétition espacée (SM-2 personnalisé)</h2>
+                    <p>MotMemo utilise un algorithme de répétition espacée intelligent qui détermine le moment optimal pour réviser chaque mot en fonction de son historique d'apprentissage.</p>
+                    
+                    <h3>📅 Calendrier des révisions :</h3>
+                    <table class="review-table">
+                        <thead>
+                            <tr>
+                                <th>Révision n°</th>
+                                <th>Intervalle</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>2 heures</td><td>Première révision après l'apprentissage</td></tr>
+                            <tr><td>2</td><td>4 heures</td><td>Deuxième révision</td></tr>
+                            <tr><td>3</td><td>8 heures</td><td>Troisième révision</td></tr>
+                            <tr><td>4</td><td>16 heures</td><td>Quatrième révision</td></tr>
+                            <tr><td>5</td><td>24 heures (1 jour)</td><td>Cinquième révision</td></tr>
+                            <tr><td>6</td><td>48 heures (2 jours)</td><td>Sixième révision</td></tr>
+                            <tr><td>7</td><td>96 heures (4 jours)</td><td>Septième révision</td></tr>
+                            <tr><td>8</td><td>360 heures (15 jours)</td><td>Huitième révision</td></tr>
+                            <tr><td>9</td><td>480 heures (20 jours)</td><td>Neuvième révision</td></tr>
+                            <tr><td>10</td><td>720 heures (30 jours)</td><td>Dixième révision</td></tr>
+                            <tr><td>11</td><td>1080 heures (45 jours)</td><td>Onzième révision</td></tr>
+                            <tr><td>12</td><td>1440 heures (60 jours)</td><td>Douzième révision</td></tr>
+                            <tr><td>13+</td><td>2160 heures (90 jours)</td><td>Révisions long terme</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="card-info">
+                        <p><strong>💡 Comment ça fonctionne ?</strong></p>
+                        <p>À chaque révision réussie, l'intervalle avant la prochaine révision augmente. Cela permet de consolider la mémoire à long terme tout en révisant moins fréquemment les mots bien maîtrisés.</p>
+                        <p>Le taux de succès évolue également :</p>
+                        <ul>
+                            <li>✅ Révision réussie : +10% (max 100%)</li>
+                            <li>❌ Révision échouée : -20% (min 0%)</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -360,12 +435,18 @@
                         <li>Les notifications sont optionnelles et peuvent être désactivées dans les paramètres</li>
                         <li>Vous pouvez à tout moment refuser ou révoquer l'autorisation de notifications</li>
                         <li>La désactivation des notifications n'affecte pas le fonctionnement de l'application</li>
+                        <li>Les notifications sont générées localement, aucune donnée n'est envoyée à des serveurs externes</li>
                     </ul>
                 </div>
                 
                 <div class="section">
                     <h2><span class="emoji">📊</span> 5. Contenu de l'application</h2>
-                    <p>MotMemo contient plus de 9 000 mots et expressions répartis sur 6 niveaux (A1 à C2) et 9 catégories grammaticales. Le contenu est fourni à titre éducatif et peut être mis à jour occasionnellement.</p>
+                    <p>MotMemo contient plus de <strong>9 300 mots et expressions</strong> répartis sur :</p>
+                    <ul>
+                        <li><strong>6 niveaux</strong> : A1 (débutant) à C2 (expert)</li>
+                        <li><strong>9 catégories grammaticales</strong> : Noms, Verbes, Adjectifs, Adverbes, Pronoms, Prépositions, Conjonctions, Déterminants, Interjections</li>
+                        <li><strong>Contenu 100% hors ligne</strong> : Tous les mots, exemples et traductions sont inclus dans l'application</li>
+                    </ul>
                 </div>
                 
                 <div class="section">
@@ -418,6 +499,7 @@
                     <p><strong>🏢 الناشر :</strong> MotMemo Team</p>
                     <p><strong>📍 البلد :</strong> المغرب</p>
                     <p><strong>📱 وضع التشغيل :</strong> بدون إنترنت (offline)</p>
+                    <p><strong>🔄 الخوارزمية :</strong> تكرار متباعد مخصص (SM-2 معدل)</p>
                 </div>
                 
                 <div class="info-grid">
@@ -431,7 +513,11 @@
                     </div>
                     <div class="info-item">
                         <strong>🔄 تكرار متباعد</strong>
-                        SM-2 للحفظ الأمثل
+                        14 فترة مراجعة
+                    </div>
+                    <div class="info-item">
+                        <strong>📊 9,300+ كلمة</strong>
+                        مفردات كاملة
                     </div>
                 </div>
                 
@@ -454,6 +540,7 @@
                             <li>أمثلة للاستخدام مع الترجمة</li>
                             <li>المرادفات والأضداد</li>
                             <li>النطق الصوتي (زر 🔊)</li>
+                            <li>مستوى الكلمة (A1, A2, B1, B2, C1, C2)</li>
                         </ul>
                     </div>
                     
@@ -463,16 +550,8 @@
                     </div>
                     
                     <div class="step-card">
-                        <p><span class="step-number">4</span> <strong>راجع بانتظام</strong></p>
-                        <p>انقر على زر <strong>"مراجعة"</strong> لرؤية الكلمات التي تحتاج إلى مراجعة حسب خوارزمية التكرار المتباعد (SM-2) :</p>
-                        <ul>
-                            <li>المراجعة الأولى : بعد يوم واحد</li>
-                            <li>المراجعة الثانية : بعد 3 أيام</li>
-                            <li>المراجعة الثالثة : بعد 7 أيام</li>
-                            <li>المراجعة الرابعة : بعد 14 يوماً</li>
-                            <li>المراجعة الخامسة : بعد 30 يوماً</li>
-                            <li>المراجعة السادسة : بعد 60 يوماً</li>
-                        </ul>
+                        <p><span class="step-number">4</span> <strong>راجع حسب خوارزمية SM-2 المخصصة</strong></p>
+                        <p>انقر على زر <strong>"مراجعة"</strong> لرؤية الكلمات التي تحتاج إلى مراجعة. تحدد خوارزمية التكرار المتباعد الذكية الوقت الأمثل لكل مراجعة.</p>
                     </div>
                     
                     <div class="step-card">
@@ -493,6 +572,48 @@
                     <div class="step-card">
                         <p><span class="step-number">7</span> <strong>استلم الإشعارات</strong></p>
                         <p>فعّل الإشعارات لتلقي تذكيرات يومية لمراجعة كلماتك. سيساعدك هذا في الحفاظ على روتين تعلم منتظم.</p>
+                    </div>
+                </div>
+                
+                <!-- ==================== Algorithme de révision en arabe ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> خوارزمية التكرار المتباعد (SM-2 مخصص)</h2>
+                    <p>يستخدم MotMemo خوارزمية تكرار متباعد ذكية لتحديد الوقت الأمثل لمراجعة كل كلمة بناءً على تاريخ تعلمها.</p>
+                    
+                    <h3>📅 جدول المراجعات :</h3>
+                    <table class="review-table">
+                        <thead>
+                            <tr>
+                                <th>رقم المراجعة</th>
+                                <th>الفترة الزمنية</th>
+                                <th>الوصف</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>2 ساعات</td><td>المراجعة الأولى بعد التعلم</td></tr>
+                            <tr><td>2</td><td>4 ساعات</td><td>المراجعة الثانية</td></tr>
+                            <tr><td>3</td><td>8 ساعات</td><td>المراجعة الثالثة</td></tr>
+                            <tr><td>4</td><td>16 ساعة</td><td>المراجعة الرابعة</td></tr>
+                            <tr><td>5</td><td>24 ساعة (يوم)</td><td>المراجعة الخامسة</td></tr>
+                            <tr><td>6</td><td>48 ساعة (يومان)</td><td>المراجعة السادسة</td></tr>
+                            <tr><td>7</td><td>96 ساعة (4 أيام)</td><td>المراجعة السابعة</td></tr>
+                            <tr><td>8</td><td>360 ساعة (15 يوم)</td><td>المراجعة الثامنة</td></tr>
+                            <tr><td>9</td><td>480 ساعة (20 يوم)</td><td>المراجعة التاسعة</td></tr>
+                            <tr><td>10</td><td>720 ساعة (30 يوم)</td><td>المراجعة العاشرة</td></tr>
+                            <tr><td>11</td><td>1080 ساعة (45 يوم)</td><td>المراجعة الحادية عشرة</td></tr>
+                            <tr><td>12</td><td>1440 ساعة (60 يوم)</td><td>المراجعة الثانية عشرة</td></tr>
+                            <tr><td>13+</td><td>2160 ساعة (90 يوم)</td><td>مراجعات طويلة المدى</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="card-info">
+                        <p><strong>💡 كيف يعمل؟</strong></p>
+                        <p>مع كل مراجعة ناجحة، تزداد الفترة الزمنية قبل المراجعة التالية. هذا يساعد في تثبيت الذاكرة طويلة المدى مع مراجعة الكلمات المتقنة بشكل أقل تكراراً.</p>
+                        <p>يتطور معدل النجاح أيضاً :</p>
+                        <ul>
+                            <li>✅ مراجعة ناجحة : +10% (الحد الأقصى 100%)</li>
+                            <li>❌ مراجعة فاشلة : -20% (الحد الأدنى 0%)</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -534,12 +655,18 @@
                         <li>الإشعارات اختيارية ويمكن تعطيلها في الإعدادات</li>
                         <li>يمكنك في أي وقت رفض أو إلغاء إذن الإشعارات</li>
                         <li>تعطيل الإشعارات لا يؤثر على عمل التطبيق</li>
+                        <li>يتم إنشاء الإشعارات محلياً، لا يتم إرسال أي بيانات إلى خوادم خارجية</li>
                     </ul>
                 </div>
                 
                 <div class="section">
                     <h2><span class="emoji">📊</span> 5. محتوى التطبيق</h2>
-                    <p>يحتوي MotMemo على أكثر من 9,000 كلمة وتعبير موزعة على 6 مستويات (من A1 إلى C2) و 9 تصنيفات نحوية. المحتوى مقدم للأغراض التعليمية وقد يتم تحديثه من حين لآخر.</p>
+                    <p>يحتوي MotMemo على أكثر من <strong>9,300 كلمة وتعبير</strong> موزعة على :</p>
+                    <ul>
+                        <li><strong>6 مستويات</strong> : من A1 (مبتدئ) إلى C2 (خبير)</li>
+                        <li><strong>9 تصنيفات نحوية</strong> : أسماء، أفعال، صفات، ظروف، ضمائر، حروف جر، أدوات ربط، محددات، أدوات تعجب</li>
+                        <li><strong>محتوى يعمل 100% بدون إنترنت</strong> : جميع الكلمات والأمثلة والترجمات مضمنة في التطبيق</li>
+                    </ul>
                 </div>
                 
                 <div class="section">
@@ -586,7 +713,7 @@
         <div class="footer">
             <p>© 2026 MotMemo Team - Tous droits réservés</p>
             <p><a href="privacy_policy.html">Politique de confidentialité</a> | <a href="mailto:sarasami19942@gmail.com">Nous contacter</a></p>
-            <p style="margin-top: 10px;">📍 Maroc | 📱 Application hors ligne (offline)</p>
+            <p style="margin-top: 10px;">📍 Maroc | 📱 Application hors ligne (offline) | 🔄 Version 2.0</p>
         </div>
     </div>
     
