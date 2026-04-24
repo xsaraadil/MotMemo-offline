@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Conditions d'utilisation - MotMemo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .section h2 {
+            color: #2E7D32;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 .emoji {
+            font-size: 24px;
+        }
+        
+        .section h3 {
+            color: #333;
+            font-size: 16px;
+            margin: 15px 0 10px 0;
+        }
+        
+        .section p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        
+        .section ul, .section ol {
+            margin: 10px 0 10px 25px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .card-info {
+            background: #f0f7f0;
+            border-left: 4px solid #2E7D32;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+        }
+        
+        .warning-card {
+            background: #fff3e0;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+        }
+        
+        .step-card {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #2E7D32;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .footer a {
+            color: #2E7D32;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .last-update {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+        
+        .language-switch {
+            text-align: center;
+            padding: 15px;
+            background: #f0f7f0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .language-switch button {
+            background: #2E7D32;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+        
+        .language-switch button:hover {
+            background: #1B5E20;
+        }
+        
+        .fr-content, .ar-content {
+            display: none;
+        }
+        
+        .fr-content.active, .ar-content.active {
+            display: block;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .info-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .info-item strong {
+            color: #2E7D32;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📜 Conditions d'utilisation</h1>
+            <p>MotMemo - Votre assistant pour apprendre le français</p>
+            <p style="font-size: 12px; margin-top: 8px;">🇲🇦 Maroc</p>
+        </div>
+        
+        <div class="language-switch">
+            <button onclick="showLanguage('fr')">🇫🇷 Français</button>
+            <button onclick="showLanguage('ar')">🇸🇦 العربية</button>
+        </div>
+        
+        <!-- Contenu Français -->
+        <div id="fr-content" class="fr-content active">
+            <div class="content">
+                <div class="card-info">
+                    <p><strong>📅 Dernière mise à jour :</strong> 24 Avril 2026</p>
+                    <p><strong>📧 Contact :</strong> sarasami19942@gmail.com</p>
+                    <p><strong>🏢 Éditeur :</strong> MotMemo Team</p>
+                    <p><strong>📍 Pays :</strong> Maroc</p>
+                    <p><strong>📱 Fonctionnement :</strong> Hors ligne (offline)</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>📚 6 Niveaux</strong>
+                        A1 → A2 → B1 → B2 → C1 → C2
+                    </div>
+                    <div class="info-item">
+                        <strong>📖 9+ Catégories</strong>
+                        Noms, Verbes, Adjectifs, etc.
+                    </div>
+                    <div class="info-item">
+                        <strong>🔄 Répétition espacée</strong>
+                        SM-2 pour mémorisation optimale
+                    </div>
+                </div>
+                
+                <!-- ==================== MÉTHODE D'UTILISATION ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">🚀</span> Comment utiliser MotMemo ?</h2>
+                    <p>MotMemo est une application simple et intuitive. Voici les étapes pour commencer à apprendre :</p>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">1</span> <strong>Choisissez votre niveau</strong></p>
+                        <p>Sélectionnez votre niveau dans le menu déroulant : A1 (débutant) à C2 (expert). L'application chargera automatiquement les mots correspondant à votre niveau.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">2</span> <strong>Apprenez de nouveaux mots</strong></p>
+                        <p>Cliquez sur le bouton <strong>"Apprendre"</strong> pour découvrir de nouveaux mots. Chaque mot affiche :</p>
+                        <ul>
+                            <li>Le mot en arabe et sa traduction en français</li>
+                            <li>La catégorie du mot (Nom, Verbe, Adjectif, etc.)</li>
+                            <li>Des exemples d'utilisation avec traduction</li>
+                            <li>Les synonymes et antonymes</li>
+                            <li>La prononciation audio (bouton 🔊)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">3</span> <strong>Mémorisez les mots</strong></p>
+                        <p>Quand vous pensez avoir retenu un mot, cliquez sur le bouton <strong>"Mémoriser"</strong>. Le mot sera sauvegardé dans votre liste de mots appris et ne réapparaîtra plus dans la section "Apprendre".</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">4</span> <strong>Révisez régulièrement</strong></p>
+                        <p>Cliquez sur le bouton <strong>"Réviser"</strong> pour voir les mots qui ont besoin d'être révisés selon l'algorithme de répétition espacée (SM-2) :</p>
+                        <ul>
+                            <li>1ère révision : après 1 jour</li>
+                            <li>2ème révision : après 3 jours</li>
+                            <li>3ème révision : après 7 jours</li>
+                            <li>4ème révision : après 14 jours</li>
+                            <li>5ème révision : après 30 jours</li>
+                            <li>6ème révision : après 60 jours</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">5</span> <strong>Consultez vos mots mémorisés</strong></p>
+                        <p>Cliquez sur <strong>"Mots mémorisés"</strong> pour voir tous les mots que vous avez appris. Vous pouvez filtrer par niveau ou par catégorie.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">6</span> <strong>Personnalisez votre apprentissage</strong></p>
+                        <p>Dans les <strong>"Paramètres"</strong>, vous pouvez :</p>
+                        <ul>
+                            <li>Choisir le nombre de mots à apprendre par jour (10, 20, 30, 40 ou 50 mots)</li>
+                            <li>Sélectionner une catégorie spécifique (Noms, Verbes, Adjectifs, etc.)</li>
+                            <li>Activer ou désactiver les notifications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">7</span> <strong>Recevez des notifications</strong></p>
+                        <p>Activez les notifications pour recevoir des rappels quotidiens pour réviser vos mots. Cela vous aidera à maintenir une routine d'apprentissage régulière.</p>
+                    </div>
+                </div>
+                
+                <!-- ==================== CONDITIONS D'UTILISATION ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">⚖️</span> 1. Acceptation des conditions</h2>
+                    <p>En utilisant l'application MotMemo, vous acceptez d'être lié par les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📱</span> 2. Utilisation de l'application</h2>
+                    <p>MotMemo est une application éducative conçue pour vous aider à apprendre le vocabulaire français. Vous acceptez de :</p>
+                    <ul>
+                        <li>Utiliser l'application uniquement à des fins personnelles et éducatives</li>
+                        <li>Ne pas tenter de modifier, décompiler ou reverse engineer l'application</li>
+                        <li>Ne pas utiliser l'application à des fins illégales ou malveillantes</li>
+                        <li>Ne pas tenter de contourner les fonctionnalités de l'application</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📴</span> 3. Fonctionnement hors ligne</h2>
+                    <p>MotMemo fonctionne entièrement hors ligne :</p>
+                    <ul>
+                        <li>Toutes les données sont stockées localement sur votre appareil</li>
+                        <li>Aucune connexion internet n'est requise</li>
+                        <li>Votre progression est sauvegardée uniquement sur votre téléphone</li>
+                        <li>En cas de désinstallation, vos données de progression seront perdues</li>
+                    </ul>
+                    <div class="warning-card">
+                        <p><strong>⚠️ Avertissement :</strong> La désinstallation de l'application entraînera la perte de toutes vos données de progression (mots mémorisés, historique de révision). Nous vous recommandons de ne pas désinstaller l'application si vous souhaitez conserver votre progression.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔔</span> 4. Notifications</h2>
+                    <p>L'application peut envoyer des notifications pour vous rappeler de réviser vos mots :</p>
+                    <ul>
+                        <li>Les notifications sont optionnelles et peuvent être désactivées dans les paramètres</li>
+                        <li>Vous pouvez à tout moment refuser ou révoquer l'autorisation de notifications</li>
+                        <li>La désactivation des notifications n'affecte pas le fonctionnement de l'application</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📊</span> 5. Contenu de l'application</h2>
+                    <p>MotMemo contient plus de 9 000 mots et expressions répartis sur 6 niveaux (A1 à C2) et 9 catégories grammaticales. Le contenu est fourni à titre éducatif et peut être mis à jour occasionnellement.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🚫</span> 6. Comportements interdits</h2>
+                    <p>Il est interdit de :</p>
+                    <ul>
+                        <li>Utiliser l'application pour harceler, abuser ou menacer d'autres utilisateurs</li>
+                        <li>Publier du contenu inapproprié ou illégal via l'application</li>
+                        <li>Tenter d'accéder à des parties non autorisées de l'application</li>
+                        <li>Utiliser l'application pour propager des virus ou des logiciels malveillants</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">💡</span> 7. Propriété intellectuelle</h2>
+                    <p>Tous les droits de propriété intellectuelle relatifs à l'application MotMemo (code, design, contenu éducatif) appartiennent à MotMemo Team. Vous n'êtes pas autorisé à copier, distribuer ou modifier l'application sans autorisation explicite.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">⚠️</span> 8. Limitation de responsabilité</h2>
+                    <p>MotMemo est fournie "telle quelle". Nous ne garantissons pas que l'application sera exempte d'erreurs ou fonctionnera sans interruption. Nous ne sommes pas responsables des pertes de données liées à la désinstallation, aux pannes de l'appareil ou aux mises à jour.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> 9. Modifications des conditions</h2>
+                    <p>Nous nous réservons le droit de modifier ces conditions d'utilisation à tout moment. Les modifications seront publiées dans l'application et prendront effet immédiatement. Votre utilisation continue de l'application après les modifications constitue une acceptation des nouvelles conditions.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📞</span> 10. Contact</h2>
+                    <p>Pour toute question concernant ces conditions d'utilisation, vous pouvez nous contacter :</p>
+                    <ul>
+                        <li><strong>Par email :</strong> <a href="mailto:sarasami19942@gmail.com">sarasami19942@gmail.com</a></li>
+                        <li><strong>Via l'application :</strong> Menu → Paramètres → Support</li>
+                    </ul>
+                </div>
+                
+                <div class="last-update">
+                    📅 Dernière mise à jour : 24 Avril 2026
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenu Arabe -->
+        <div id="ar-content" class="ar-content">
+            <div class="content">
+                <div class="card-info">
+                    <p><strong>📅 تاريخ آخر تحديث :</strong> 24 أبريل 2026</p>
+                    <p><strong>📧 للتواصل :</strong> sarasami19942@gmail.com</p>
+                    <p><strong>🏢 الناشر :</strong> MotMemo Team</p>
+                    <p><strong>📍 البلد :</strong> المغرب</p>
+                    <p><strong>📱 وضع التشغيل :</strong> بدون إنترنت (offline)</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>📚 6 مستويات</strong>
+                        A1 → A2 → B1 → B2 → C1 → C2
+                    </div>
+                    <div class="info-item">
+                        <strong>📖 9+ تصنيفات</strong>
+                        أسماء، أفعال، صفات، إلخ
+                    </div>
+                    <div class="info-item">
+                        <strong>🔄 تكرار متباعد</strong>
+                        SM-2 للحفظ الأمثل
+                    </div>
+                </div>
+                
+                <!-- ==================== Méthode d'utilisation en arabe ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">🚀</span> كيفية استخدام تطبيق MotMemo؟</h2>
+                    <p>تطبيق MotMemo بسيط وسهل الاستخدام. إليك الخطوات لبدء التعلم :</p>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">1</span> <strong>اختر مستواك</strong></p>
+                        <p>اختر مستواك من القائمة المنسدلة : من A1 (مبتدئ) إلى C2 (خبير). سيقوم التطبيق بتحميل الكلمات المناسبة لمستواك تلقائياً.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">2</span> <strong>تعلم كلمات جديدة</strong></p>
+                        <p>انقر على زر <strong>"تعلم"</strong> لاكتشاف كلمات جديدة. تعرض كل كلمة :</p>
+                        <ul>
+                            <li>الكلمة بالعربية وترجمتها إلى الفرنسية</li>
+                            <li>تصنيف الكلمة (اسم، فعل، صفة، إلخ)</li>
+                            <li>أمثلة للاستخدام مع الترجمة</li>
+                            <li>المرادفات والأضداد</li>
+                            <li>النطق الصوتي (زر 🔊)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">3</span> <strong>احفظ الكلمات</strong></p>
+                        <p>عندما تعتقد أنك تذكرت الكلمة، انقر على زر <strong>"حفظ"</strong>. سيتم حفظ الكلمة في قائمة كلماتك المحفوظة ولن تظهر مرة أخرى في قسم "تعلم".</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">4</span> <strong>راجع بانتظام</strong></p>
+                        <p>انقر على زر <strong>"مراجعة"</strong> لرؤية الكلمات التي تحتاج إلى مراجعة حسب خوارزمية التكرار المتباعد (SM-2) :</p>
+                        <ul>
+                            <li>المراجعة الأولى : بعد يوم واحد</li>
+                            <li>المراجعة الثانية : بعد 3 أيام</li>
+                            <li>المراجعة الثالثة : بعد 7 أيام</li>
+                            <li>المراجعة الرابعة : بعد 14 يوماً</li>
+                            <li>المراجعة الخامسة : بعد 30 يوماً</li>
+                            <li>المراجعة السادسة : بعد 60 يوماً</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">5</span> <strong>اطلع على كلماتك المحفوظة</strong></p>
+                        <p>انقر على <strong>"الكلمات المحفوظة"</strong> لرؤية جميع الكلمات التي تعلمتها. يمكنك التصفية حسب المستوى أو حسب التصنيف.</p>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">6</span> <strong>خصص تجربة التعلم الخاصة بك</strong></p>
+                        <p>في <strong>"الإعدادات"</strong>، يمكنك :</p>
+                        <ul>
+                            <li>اختيار عدد الكلمات التي تريد تعلمها في اليوم (10، 20، 30، 40 أو 50 كلمة)</li>
+                            <li>اختيار تصنيف محدد (أسماء، أفعال، صفات، إلخ)</li>
+                            <li>تفعيل أو تعطيل الإشعارات</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <p><span class="step-number">7</span> <strong>استلم الإشعارات</strong></p>
+                        <p>فعّل الإشعارات لتلقي تذكيرات يومية لمراجعة كلماتك. سيساعدك هذا في الحفاظ على روتين تعلم منتظم.</p>
+                    </div>
+                </div>
+                
+                <!-- ==================== شروط الاستخدام بالعربية ==================== -->
+                <div class="section">
+                    <h2><span class="emoji">⚖️</span> 1. قبول الشروط</h2>
+                    <p>باستخدامك لتطبيق MotMemo، فإنك توافق على الالتزام بشروط الاستخدام هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام التطبيق.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📱</span> 2. استخدام التطبيق</h2>
+                    <p>MotMemo هو تطبيق تعليمي مصمم لمساعدتك في تعلم المفردات الفرنسية. أنت توافق على :</p>
+                    <ul>
+                        <li>استخدام التطبيق فقط للأغراض الشخصية والتعليمية</li>
+                        <li>عدم محاولة تعديل أو فك تشفير أو هندسة عكسية للتطبيق</li>
+                        <li>عدم استخدام التطبيق لأغراض غير قانونية أو ضارة</li>
+                        <li>عدم محاولة تجاوز وظائف التطبيق</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📴</span> 3. العمل بدون إنترنت</h2>
+                    <p>يعمل MotMemo بشكل كامل بدون إنترنت :</p>
+                    <ul>
+                        <li>جميع البيانات مخزنة محلياً على جهازك</li>
+                        <li>لا يتطلب أي اتصال بالإنترنت</li>
+                        <li>تقدمك محفوظ فقط على هاتفك</li>
+                        <li>في حالة إلغاء التثبيت، ستفقد بيانات تقدمك</li>
+                    </ul>
+                    <div class="warning-card">
+                        <p><strong>⚠️ تحذير :</strong> إلغاء تثبيت التطبيق سيؤدي إلى فقدان جميع بيانات تقدمك (الكلمات المحفوظة، سجل المراجعة). ننصحك بعدم إلغاء التثبيت إذا كنت ترغب في الاحتفاظ بتقدمك.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔔</span> 4. الإشعارات</h2>
+                    <p>قد يرسل التطبيق إشعارات لتذكيرك بمراجعة كلماتك :</p>
+                    <ul>
+                        <li>الإشعارات اختيارية ويمكن تعطيلها في الإعدادات</li>
+                        <li>يمكنك في أي وقت رفض أو إلغاء إذن الإشعارات</li>
+                        <li>تعطيل الإشعارات لا يؤثر على عمل التطبيق</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📊</span> 5. محتوى التطبيق</h2>
+                    <p>يحتوي MotMemo على أكثر من 9,000 كلمة وتعبير موزعة على 6 مستويات (من A1 إلى C2) و 9 تصنيفات نحوية. المحتوى مقدم للأغراض التعليمية وقد يتم تحديثه من حين لآخر.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🚫</span> 6. السلوكيات المحظورة</h2>
+                    <p>يمنع :</p>
+                    <ul>
+                        <li>استخدام التطبيق للمضايقة أو الإساءة أو التهديد</li>
+                        <li>نشر محتوى غير لائق أو غير قانوني عبر التطبيق</li>
+                        <li>محاولة الوصول إلى أجزاء غير مصرح بها من التطبيق</li>
+                        <li>استخدام التطبيق لنشر الفيروسات أو البرامج الضارة</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">💡</span> 7. الملكية الفكرية</h2>
+                    <p>جميع حقوق الملكية الفكرية المتعلقة بتطبيق MotMemo (الكود، التصميم، المحتوى التعليمي) تعود إلى MotMemo Team. غير مسموح لك بنسخ أو توزيع أو تعديل التطبيق دون إذن صريح.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">⚠️</span> 8. تحديد المسؤولية</h2>
+                    <p>يتم توفير MotMemo "كما هي". لا نضمن أن التطبيق سيكون خالياً من الأخطاء أو سيعمل دون انقطاع. نحن غير مسؤولين عن فقدان البيانات المتعلق بإلغاء التثبيت أو أعطال الجهاز أو التحديثات.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> 9. تعديلات الشروط</h2>
+                    <p>نحتفظ بالحق في تعديل شروط الاستخدام هذه في أي وقت. سيتم نشر التعديلات في التطبيق وتصبح سارية المفعول فوراً. استمرارك في استخدام التطبيق بعد التعديلات يشكل قبولاً للشروط الجديدة.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📞</span> 10. الاتصال</h2>
+                    <p>للاستفسار بخصوص شروط الاستخدام هذه، يمكنك الاتصال بنا :</p>
+                    <ul>
+                        <li><strong>عن طريق البريد الإلكتروني :</strong> <a href="mailto:sarasami19942@gmail.com">sarasami19942@gmail.com</a></li>
+                        <li><strong>عبر التطبيق :</strong> القائمة ← الإعدادات ← الدعم</li>
+                    </ul>
+                </div>
+                
+                <div class="last-update">
+                    📅 آخر تحديث : 24 أبريل 2026
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 MotMemo Team - Tous droits réservés</p>
+            <p><a href="privacy_policy.html">Politique de confidentialité</a> | <a href="mailto:sarasami19942@gmail.com">Nous contacter</a></p>
+            <p style="margin-top: 10px;">📍 Maroc | 📱 Application hors ligne (offline)</p>
+        </div>
+    </div>
+    
+    <script>
+        function showLanguage(lang) {
+            const frContent = document.getElementById('fr-content');
+            const arContent = document.getElementById('ar-content');
+            
+            if (lang === 'fr') {
+                frContent.classList.add('active');
+                arContent.classList.remove('active');
+                document.title = "Conditions d'utilisation - MotMemo";
+            } else {
+                frContent.classList.remove('active');
+                arContent.classList.add('active');
+                document.title = "شروط الاستخدام - MotMemo";
+            }
+        }
+    </script>
+</body>
+</html>
