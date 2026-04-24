@@ -245,16 +245,6 @@
             display: block;
             margin-bottom: 5px;
         }
-        
-        .badge {
-            display: inline-block;
-            background: #2E7D32;
-            color: white;
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 20px;
-            margin-left: 8px;
-        }
     </style>
 </head>
 <body>
@@ -279,7 +269,6 @@
                     <p><strong>🏢 Éditeur :</strong> MotMemo Team</p>
                     <p><strong>📍 Pays :</strong> Maroc</p>
                     <p><strong>📱 Fonctionnement :</strong> Hors ligne (offline)</p>
-                    <p><strong>🔄 Algorithme :</strong> Répétition espacée personnalisée (SM-2 modifié)</p>
                 </div>
                 
                 <div class="info-grid">
@@ -428,6 +417,7 @@
                     </div>
                 </div>
                 
+                <!-- ==================== SECTION NOTIFICATIONS ==================== -->
                 <div class="section">
                     <h2><span class="emoji">🔔</span> 4. Notifications</h2>
                     <p>L'application peut envoyer des notifications pour vous rappeler de réviser vos mots :</p>
@@ -436,6 +426,7 @@
                         <li>Vous pouvez à tout moment refuser ou révoquer l'autorisation de notifications</li>
                         <li>La désactivation des notifications n'affecte pas le fonctionnement de l'application</li>
                         <li>Les notifications sont générées localement, aucune donnée n'est envoyée à des serveurs externes</li>
+                        <li>Pour Android 13+, la permission <strong>POST_NOTIFICATIONS</strong> est requise</li>
                     </ul>
                 </div>
                 
@@ -499,7 +490,6 @@
                     <p><strong>🏢 الناشر :</strong> MotMemo Team</p>
                     <p><strong>📍 البلد :</strong> المغرب</p>
                     <p><strong>📱 وضع التشغيل :</strong> بدون إنترنت (offline)</p>
-                    <p><strong>🔄 الخوارزمية :</strong> تكرار متباعد مخصص (SM-2 معدل)</p>
                 </div>
                 
                 <div class="info-grid">
@@ -583,11 +573,7 @@
                     <h3>📅 جدول المراجعات :</h3>
                     <table class="review-table">
                         <thead>
-                            <tr>
-                                <th>رقم المراجعة</th>
-                                <th>الفترة الزمنية</th>
-                                <th>الوصف</th>
-                            </tr>
+                            <tr><th>رقم المراجعة</th><th>الفترة الزمنية</th><th>الوصف</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>1</td><td>2 ساعات</td><td>المراجعة الأولى بعد التعلم</td></tr>
@@ -648,6 +634,7 @@
                     </div>
                 </div>
                 
+                <!-- ==================== SECTION NOTIFICATIONS (ARABE) ==================== -->
                 <div class="section">
                     <h2><span class="emoji">🔔</span> 4. الإشعارات</h2>
                     <p>قد يرسل التطبيق إشعارات لتذكيرك بمراجعة كلماتك :</p>
@@ -656,6 +643,7 @@
                         <li>يمكنك في أي وقت رفض أو إلغاء إذن الإشعارات</li>
                         <li>تعطيل الإشعارات لا يؤثر على عمل التطبيق</li>
                         <li>يتم إنشاء الإشعارات محلياً، لا يتم إرسال أي بيانات إلى خوادم خارجية</li>
+                        <li>لإصدار Android 13+، الإذن <strong>POST_NOTIFICATIONS</strong> مطلوب</li>
                     </ul>
                 </div>
                 
