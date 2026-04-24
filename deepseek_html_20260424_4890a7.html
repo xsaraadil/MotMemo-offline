@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Politique de confidentialité - MotMemo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .section h2 {
+            color: #2E7D32;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2 .emoji {
+            font-size: 24px;
+        }
+        
+        .section h3 {
+            color: #333;
+            font-size: 16px;
+            margin: 15px 0 10px 0;
+        }
+        
+        .section p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        
+        .section ul, .section ol {
+            margin: 10px 0 10px 25px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        .card-info {
+            background: #f0f7f0;
+            border-left: 4px solid #2E7D32;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+        }
+        
+        .card-info p {
+            margin-bottom: 5px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #2E7D32;
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .footer a {
+            color: #2E7D32;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .last-update {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 22px;
+            }
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+        
+        .language-switch {
+            text-align: center;
+            padding: 15px;
+            background: #f0f7f0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .language-switch button {
+            background: #2E7D32;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+        
+        .language-switch button:hover {
+            background: #1B5E20;
+        }
+        
+        .fr-content, .ar-content {
+            display: none;
+        }
+        
+        .fr-content.active, .ar-content.active {
+            display: block;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .info-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .info-item strong {
+            color: #2E7D32;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔒 Politique de confidentialité</h1>
+            <p>MotMemo - Votre assistant pour apprendre le français</p>
+            <p style="font-size: 12px; margin-top: 8px;">🇲🇦 Maroc</p>
+        </div>
+        
+        <div class="language-switch">
+            <button onclick="showLanguage('fr')">🇫🇷 Français</button>
+            <button onclick="showLanguage('ar')">🇸🇦 العربية</button>
+        </div>
+        
+        <!-- Contenu Français -->
+        <div id="fr-content" class="fr-content active">
+            <div class="content">
+                <div class="card-info">
+                    <p><strong>📅 Dernière mise à jour :</strong> 24 Avril 2026</p>
+                    <p><strong>📧 Contact :</strong> sarasami19942@gmail.com</p>
+                    <p><strong>🏢 Éditeur :</strong> MotMemo Team</p>
+                    <p><strong>📍 Pays :</strong> Maroc</p>
+                    <p><strong>📱 Fonctionnement :</strong> Hors ligne (offline)</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>📊 Données collectées</strong>
+                        Aucune donnée personnelle
+                    </div>
+                    <div class="info-item">
+                        <strong>🔔 Notifications</strong>
+                        Pour rappeler la révision des mots
+                    </div>
+                    <div class="info-item">
+                        <strong>🔐 Autorisations</strong>
+                        POST_NOTIFICATIONS (Android 13+)
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📖</span> 1. Introduction</h2>
+                    <p>Bienvenue sur <strong>MotMemo</strong>, l'application d'apprentissage du vocabulaire français qui fonctionne <strong>entièrement hors ligne (offline)</strong>. Cette politique de confidentialité explique comment nous traitons vos données personnelles lorsque vous utilisez notre application.</p>
+                    <p>Nous accordons une grande importance à la protection de votre vie privée. MotMemo est conçue pour fonctionner <strong>sans collecte de données personnelles</strong> et <strong>sans connexion internet obligatoire</strong>.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📊</span> 2. Données collectées</h2>
+                    <p><strong>MotMemo ne collecte AUCUNE donnée personnelle vous concernant.</strong> Voici le détail :</p>
+                    <ul>
+                        <li><strong>Aucune donnée d'identification</strong> (nom, email, adresse, numéro de téléphone)</li>
+                        <li><strong>Aucune donnée de localisation</strong> (GPS, IP, etc.)</li>
+                        <li><strong>Aucune donnée de navigation</strong> (historique, cookies)</li>
+                        <li><strong>Aucune donnée biométrique</strong> (empreinte digitale, visage)</li>
+                    </ul>
+                    <div class="card-info">
+                        <p><strong>✅ Les seules données stockées sont locales :</strong></p>
+                        <p>• Votre progression d'apprentissage (mots mémorisés, dates de révision)<br>
+                        • Vos préférences (niveau actif, catégorie, nombre de mots par jour)<br>
+                        • Ces données restent UNIQUEMENT sur votre appareil et ne sont jamais transmises à nos serveurs.<br>
+                        • L'application fonctionne entièrement hors ligne - aucune donnée ne quitte votre téléphone.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔔</span> 3. Notifications</h2>
+                    <p>MotMemo peut vous envoyer des notifications pour vous rappeler de réviser vos mots. Ces notifications sont <strong>optionnelles</strong> et vous pouvez les accepter ou les refuser au premier lancement de l'application.</p>
+                    <ul>
+                        <li>Les notifications sont générées localement sur votre appareil</li>
+                        <li>Aucune donnée n'est envoyée à des serveurs externes</li>
+                        <li>Vous pouvez désactiver les notifications à tout moment dans les paramètres de votre appareil</li>
+                        <li>Les notifications sont uniquement destinées à vous rappeler de réviser vos mots</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔐</span> 4. Autorisations requises</h2>
+                    <p>MotMemo demande les autorisations suivantes :</p>
+                    <ul>
+                        <li><strong>POST_NOTIFICATIONS (Android 13+ uniquement) :</strong> Pour vous envoyer des rappels de révision. Cette autorisation n'est demandée qu'avec votre consentement explicite.</li>
+                    </ul>
+                    <p><strong>⚠️ Aucune autre autorisation n'est requise.</strong> MotMemo n'accède pas à votre appareil photo, microphone, contacts, fichiers, ou localisation.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📴</span> 5. Fonctionnement hors ligne (Offline)</h2>
+                    <p>MotMemo est conçue pour fonctionner <strong>entièrement hors ligne</strong> :</p>
+                    <ul>
+                        <li>Toutes les données (mots, exemples, traductions) sont incluses dans l'application</li>
+                        <li>Aucune connexion internet n'est requise pour utiliser l'application</li>
+                        <li>Aucune donnée n'est synchronisée avec des serveurs externes</li>
+                        <li>Votre progression est sauvegardée uniquement sur votre appareil</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">👶</span> 6. Enfants</h2>
+                    <p>MotMemo peut être utilisée par des personnes de tout âge. Comme nous ne collectons aucune donnée personnelle, aucune information sur les enfants n'est traitée ou stockée.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔗</span> 7. Liens externes</h2>
+                    <p>L'application MotMemo ne contient pas de liens vers des sites externes. Toutes les données (mots, exemples, traductions) sont incluses dans l'application et ne nécessitent pas de connexion internet.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">⚖️</span> 8. Conformité légale</h2>
+                    <p>MotMemo est conforme aux réglementations suivantes :</p>
+                    <ul>
+                        <li><strong>RGPD (Règlement Général sur la Protection des Données)</strong> - Union Européenne</li>
+                        <li><strong>Loi 09-08 sur la protection des données personnelles</strong> - Maroc</li>
+                        <li><strong>CCPA (California Consumer Privacy Act)</strong> - Californie, États-Unis</li>
+                    </ul>
+                    <p>Étant donné que nous ne collectons aucune donnée personnelle, aucune déclaration auprès des autorités n'est requise.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📞</span> 9. Contact</h2>
+                    <p>Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter :</p>
+                    <ul>
+                        <li><strong>Par email :</strong> <a href="mailto:sarasami19942@gmail.com">sarasami19942@gmail.com</a></li>
+                        <li><strong>Via l'application :</strong> Menu → Paramètres → Support</li>
+                    </ul>
+                    <p>Nous nous engageons à répondre à toutes vos demandes dans les meilleurs délais.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> 10. Modifications de cette politique</h2>
+                    <p>Nous pouvons mettre à jour cette politique de confidentialité occasionnellement. Toute modification sera publiée dans l'application et prendra effet immédiatement.</p>
+                    <p>Nous vous encourageons à consulter cette page régulièrement pour rester informé des éventuels changements.</p>
+                </div>
+                
+                <div class="last-update">
+                    📅 Dernière mise à jour : 24 Avril 2026
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenu Arabe -->
+        <div id="ar-content" class="ar-content">
+            <div class="content">
+                <div class="card-info">
+                    <p><strong>📅 تاريخ آخر تحديث :</strong> 24 أبريل 2026</p>
+                    <p><strong>📧 للتواصل :</strong> sarasami19942@gmail.com</p>
+                    <p><strong>🏢 الناشر :</strong> MotMemo Team</p>
+                    <p><strong>📍 البلد :</strong> المغرب</p>
+                    <p><strong>📱 وضع التشغيل :</strong> بدون إنترنت (offline)</p>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>📊 البيانات التي يتم جمعها</strong>
+                        لا توجد بيانات شخصية
+                    </div>
+                    <div class="info-item">
+                        <strong>🔔 الإشعارات</strong>
+                        لتذكيرك بمراجعة الكلمات
+                    </div>
+                    <div class="info-item">
+                        <strong>🔐 الأذونات</strong>
+                        POST_NOTIFICATIONS (أندرويد 13+)
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📖</span> 1. مقدمة</h2>
+                    <p>مرحباً بكم في <strong>MotMemo</strong>، تطبيق تعلم المفردات الفرنسية الذي يعمل <strong>بشكل كامل بدون إنترنت (offline)</strong>. تشرح سياسة الخصوصية هذه كيفية معالجة بياناتك الشخصية عند استخدام تطبيقنا.</p>
+                    <p>نحن نولي أهمية كبيرة لحماية خصوصيتك. صمم تطبيق MotMemo ليعمل <strong>بدون جمع بيانات شخصية</strong> و <strong>بدون اتصال إلزامي بالإنترنت</strong>.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📊</span> 2. البيانات التي يتم جمعها</h2>
+                    <p><strong>تطبيق MotMemo لا يجمع أي بيانات شخصية عنك.</strong> إليك التفاصيل :</p>
+                    <ul>
+                        <li><strong>لا توجد بيانات تعريفية</strong> (الاسم، البريد الإلكتروني، العنوان، رقم الهاتف)</li>
+                        <li><strong>لا توجد بيانات موقع</strong> (GPS، IP، الخ)</li>
+                        <li><strong>لا توجد بيانات تصفح</strong> (سجل التصفح، ملفات تعريف الارتباط)</li>
+                        <li><strong>لا توجد بيانات بيومترية</strong> (بصمة الإصبع، الوجه)</li>
+                    </ul>
+                    <div class="card-info">
+                        <p><strong>✅ البيانات الوحيدة المخزنة محلياً هي :</strong></p>
+                        <p>• تقدمك في التعلم (الكلمات المحفوظة، تواريخ المراجعة)<br>
+                        • تفضيلاتك (المستوى النشط، التصنيف، عدد الكلمات في اليوم)<br>
+                        • هذه البيانات تبقى فقط على جهازك ولا يتم إرسالها أبداً إلى خوادمنا.<br>
+                        • التطبيق يعمل بشكل كامل بدون إنترنت - لا توجد بيانات تغادر هاتفك.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔔</span> 3. الإشعارات</h2>
+                    <p>قد يرسل لك تطبيق MotMemo إشعارات لتذكيرك بمراجعة كلماتك. هذه الإشعارات <strong>اختيارية</strong> ويمكنك قبولها أو رفضها عند أول تشغيل للتطبيق.</p>
+                    <ul>
+                        <li>يتم إنشاء الإشعارات محلياً على جهازك</li>
+                        <li>لا يتم إرسال أي بيانات إلى خوادم خارجية</li>
+                        <li>يمكنك تعطيل الإشعارات في أي وقت من إعدادات جهازك</li>
+                        <li>الإشعارات مخصصة فقط لتذكيرك بمراجعة كلماتك</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔐</span> 4. الأذونات المطلوبة</h2>
+                    <p>يطلب تطبيق MotMemo الأذونات التالية :</p>
+                    <ul>
+                        <li><strong>POST_NOTIFICATIONS (أندرويد 13+ فقط) :</strong> لإرسال تذكيرات المراجعة. لا يُطلب هذا الإذن إلا بموافقتك الصريحة.</li>
+                    </ul>
+                    <p><strong>⚠️ لا يطلب أي أذونات أخرى.</strong> لا يصل MotMemo إلى الكاميرا أو الميكروفون أو جهات الاتصال أو الملفات أو الموقع.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📴</span> 5. العمل بدون إنترنت (Offline)</h2>
+                    <p>صمم تطبيق MotMemo ليعمل <strong>بشكل كامل بدون إنترنت</strong> :</p>
+                    <ul>
+                        <li>جميع البيانات (الكلمات، الأمثلة، الترجمات) مضمنة في التطبيق</li>
+                        <li>لا يتطلب أي اتصال بالإنترنت لاستخدام التطبيق</li>
+                        <li>لا تتم مزامنة أي بيانات مع خوادم خارجية</li>
+                        <li>يتم حفظ تقدمك فقط على جهازك</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">👶</span> 6. الأطفال</h2>
+                    <p>يمكن استخدام MotMemo من قبل أشخاص من جميع الأعمار. نظراً لأننا لا نجمع أي بيانات شخصية، لا تتم معالجة أو تخزين أي معلومات عن الأطفال.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔗</span> 7. الروابط الخارجية</h2>
+                    <p>لا يحتوي تطبيق MotMemo على روابط لمواقع خارجية. جميع البيانات (الكلمات، الأمثلة، الترجمات) مضمنة في التطبيق ولا تتطلب اتصالاً بالإنترنت.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">⚖️</span> 8. الامتثال القانوني</h2>
+                    <p>يتوافق MotMemo مع اللوائح التالية :</p>
+                    <ul>
+                        <li><strong>GDPR (اللائحة العامة لحماية البيانات)</strong> - الاتحاد الأوروبي</li>
+                        <li><strong>القانون 09-08 المتعلق بحماية المعطيات الشخصية</strong> - المغرب</li>
+                        <li><strong>CCPA (قانون خصوصية المستهلك في كاليفورنيا)</strong> - كاليفورنيا، الولايات المتحدة</li>
+                    </ul>
+                    <p>نظراً لأننا لا نجمع أي بيانات شخصية، لا يلزم أي إعلان للسلطات.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">📞</span> 9. الاتصال</h2>
+                    <p>إذا كانت لديك أسئلة بخصوص سياسة الخصوصية هذه، يمكنك الاتصال بنا :</p>
+                    <ul>
+                        <li><strong>عن طريق البريد الإلكتروني :</strong> <a href="mailto:sarasami19942@gmail.com">sarasami19942@gmail.com</a></li>
+                        <li><strong>عبر التطبيق :</strong> القائمة ← الإعدادات ← الدعم</li>
+                    </ul>
+                    <p>نلتزم بالرد على جميع طلباتك في أقرب وقت ممكن.</p>
+                </div>
+                
+                <div class="section">
+                    <h2><span class="emoji">🔄</span> 10. تعديلات هذه السياسة</h2>
+                    <p>قد نقوم بتحديث سياسة الخصوصية هذه من حين لآخر. سيتم نشر أي تعديلات في التطبيق وتصبح سارية المفعول فوراً.</p>
+                    <p>نشجعك على مراجعة هذه الصفحة بانتظام للبقاء على اطلاع بأي تغييرات.</p>
+                </div>
+                
+                <div class="last-update">
+                    📅 آخر تحديث : 24 أبريل 2026
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 MotMemo Team - Tous droits réservés</p>
+            <p><a href="#">Conditions d'utilisation</a> | <a href="mailto:sarasami19942@gmail.com">Nous contacter</a></p>
+            <p style="margin-top: 10px;">📍 Maroc | 📱 Application hors ligne (offline)</p>
+        </div>
+    </div>
+    
+    <script>
+        function showLanguage(lang) {
+            const frContent = document.getElementById('fr-content');
+            const arContent = document.getElementById('ar-content');
+            
+            if (lang === 'fr') {
+                frContent.classList.add('active');
+                arContent.classList.remove('active');
+                document.title = "Politique de confidentialité - MotMemo";
+            } else {
+                frContent.classList.remove('active');
+                arContent.classList.add('active');
+                document.title = "سياسة الخصوصية - MotMemo";
+            }
+        }
+    </script>
+</body>
+</html>
